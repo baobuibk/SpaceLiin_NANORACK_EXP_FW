@@ -1,17 +1,16 @@
 /*
- * tec.h
+ * lt8722.h
  *
- *  Created on: Nov 21, 2024
+ *  Created on: Nov 27, 2024
  *      Author: SANG HUYNH
  */
 
-#ifndef TEMPERATURE_TEC_H_
-#define TEMPERATURE_TEC_H_
+#ifndef DEVICES_LT8722_LT8722_H_
+#define DEVICES_LT8722_LT8722_H_
 
 #include "board.h"
 #include "stm32f4xx_ll_spi.h"
 #include "stdbool.h"
-
 
 #define LT8722_CRC_POLYNOMIAL          			 0x07
 
@@ -324,20 +323,31 @@ struct lt8722_packet {
 	uint16_t status;
 };
 
-int8_t tec_init(void);
-void tec_read(void);
-void tec_create_task(void);
-
 int32_t lt8722_voltage_to_dac(int64_t voltage);
 int64_t lt8722_dac_to_voltage(int32_t dac);
-int lt8722_transaction(struct lt8722_packet *packet);
-int lt8722_reg_read(uint8_t address, uint32_t *data);
-int lt8722_reg_write(uint8_t address, uint32_t data);
-int lt8722_reg_write_mask(uint8_t address, uint32_t mask, uint32_t data);
-int lt8722_get_status(uint16_t *status);
-int lt8722_clear_faults(void);
-int lt8722_set_enable_req(bool value);
-int lt8722_set_swen_req(bool value);
-int lt8722_reset(void);
+int8_t lt8722_transaction(struct lt8722_packet *packet);
+int8_t lt8722_reg_read(uint8_t address, uint32_t *data);
+int8_t lt8722_reg_write(uint8_t address, uint32_t data);
+int8_t lt8722_reg_write_mask(uint8_t address, uint32_t mask, uint32_t data);
 
-#endif /* TEMPERATURE_TEC_H_ */
+int8_t lt8722_set_enable_req(bool value);
+int8_t lt8722_set_swen_req(bool value);
+int8_t lt8722_reset(void);
+
+int8_t lt8722_clear_faults(void);
+int8_t lt8722_clear_status(void);
+int8_t lt8722_get_status(uint16_t *status);
+
+int8_t lt8722_set_dac(uint32_t value);
+int8_t lt8722_get_dac(uint32_t *value);
+
+int8_t lt8722_set_spis_ov_clamp(uint8_t value);
+int8_t lt8722_get_spis_ov_clamp(uint8_t *value);
+
+int8_t lt8722_set_spis_uv_clamp(uint8_t value);
+int8_t lt8722_get_spis_uv_clamp(uint8_t *value);
+
+int8_t lt8722_init(void);
+int8_t lt8722_set_output_voltage(int64_t value);
+
+#endif /* DEVICES_LT8722_LT8722_H_ */

@@ -1,6 +1,6 @@
 Core/CMDLine/command.o: ../Core/CMDLine/command.c \
  ../Core/CMDLine/command.h ../Core/CMDLine/cmdline.h ../Core/Inc/main.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -9,6 +9,7 @@ Core/CMDLine/command.o: ../Core/CMDLine/command.c \
  ../Drivers/CMSIS/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h \
@@ -24,11 +25,12 @@ Core/CMDLine/command.o: ../Core/CMDLine/command.c \
  D:/STworkspace/exp_test/Core/Common/basetypedef.h \
  D:/STworkspace/exp_test/Core/Board/board.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
- D:/STworkspace/exp_test/Core/Temperature/tec.h
+ D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h \
+ D:/STworkspace/exp_test/BSP/I2C/i2c.h
 ../Core/CMDLine/command.h:
 ../Core/CMDLine/cmdline.h:
 ../Core/Inc/main.h:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -37,6 +39,7 @@ Core/CMDLine/command.o: ../Core/CMDLine/command.c \
 ../Drivers/CMSIS/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h:
@@ -52,4 +55,5 @@ D:/STworkspace/exp_test/Scheduler/scheduler.h:
 D:/STworkspace/exp_test/Core/Common/basetypedef.h:
 D:/STworkspace/exp_test/Core/Board/board.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
-D:/STworkspace/exp_test/Core/Temperature/tec.h:
+D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h:
+D:/STworkspace/exp_test/BSP/I2C/i2c.h:

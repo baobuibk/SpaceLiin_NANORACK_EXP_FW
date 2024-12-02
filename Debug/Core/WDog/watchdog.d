@@ -11,6 +11,7 @@ Core/WDog/watchdog.o: ../Core/WDog/watchdog.c ../Core/WDog/watchdog.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  ../Core/Inc/main.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h \
@@ -34,6 +35,7 @@ D:/STworkspace/exp_test/Core/Common/basetypedef.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
 ../Core/Inc/main.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h:

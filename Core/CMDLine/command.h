@@ -39,7 +39,10 @@ int Cmd_reset_en_req(int argc, char *argv[]);
 int Cmd_clear_status_reg(int argc, char *argv[]);
 int Cmd_read(int argc, char *argv[]);
 int Cmd_on_tec(int argc, char *argv[]);
+int Cmd_tec_set_vol(int argc, char *argv[]);
 int Cmd_get_status(int argc, char *argv[]);
+int Cmd_set_ov_clamp(int argc, char *argv[]);
+int Cmd_set_uv_clamp(int argc, char *argv[]);
 int Cmd_get_all(int argc, char *argv[]);
 
 extern void CONSOLE_UART_IRQHandler(void);

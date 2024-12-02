@@ -11,7 +11,7 @@
 #include "uart.h"
 #include "main.h"
 #include "board.h"
-#include "tec.h"
+#include "lt8722.h"
 #include "stm32f4xx_ll_gpio.h"
 #include "stm32f4xx_ll_rcc.h"
 #include <stdlib.h>
@@ -24,7 +24,7 @@ typedef struct _Command_TaskContextTypedef_
 	SCH_TaskPropertyTypedef       taskProperty;
 } Command_TaskContextTypedef;
 
-/* Private function -----------------------------------------------------------*/
+/* Private function ----------------------------------------------------------*/
 static	void	command_task_update(void);
 
 /* Private variable -----------------------------------------------------------*/
@@ -46,7 +46,10 @@ tCmdLineEntry g_psCmdTable[] =  {
 								{"clear_status_reg", Cmd_clear_status_reg,": test | format: "},
 								{"read", Cmd_read,": test | format: "},
 								{"on_tec", Cmd_on_tec,": test | format: "},
+								{"tec_set_vol", Cmd_tec_set_vol,": test | format: "},
 								{"get_status", Cmd_get_status,": test | format: "},
+								{"set_ov_clamp", Cmd_set_ov_clamp,": test | format: "},
+								{"set_uv_clamp", Cmd_set_uv_clamp,": test | format: "},
 								{"get_all", Cmd_get_all, ":Display all | format: get_all"},
 								{0,0,0}
 								};
@@ -334,13 +337,13 @@ int Cmd_read(int argc, char *argv[])
 	UART_Printf(&CONSOLE_UART, "SPIS_DAC: 0x%X-%X \n", data>>16, data);
 
 	lt8722_reg_read(LT8722_SPIS_OV_CLAMP, &data);
-	UART_Printf(&CONSOLE_UART, "SPIS_OV_CLAMP: 0x%X  \n", data);
+	UART_Printf(&CONSOLE_UART, "SPIS_OV_CLAMP: 0x%X \n", data);
 
 	lt8722_reg_read(LT8722_SPIS_UV_CLAMP, &data);
 	UART_Printf(&CONSOLE_UART, "SPIS_UV_CLAMP: 0x%X \n", data);
 
 	lt8722_reg_read(LT8722_SPIS_AMUX, &data);
-	UART_Printf(&CONSOLE_UART, "SPIS_AMUX: 0x%X  \n", data);
+	UART_Printf(&CONSOLE_UART, "SPIS_AMUX: 0x%X \n", data);
 
 	return (CMDLINE_OK);
 }
@@ -348,7 +351,19 @@ int Cmd_read(int argc, char *argv[])
 
 int Cmd_on_tec(int argc, char *argv[])
 {
-	tec_init();
+	lt8722_init();
+	return (CMDLINE_OK);
+}
+
+int Cmd_tec_set_vol(int argc, char *argv[])
+{
+//	if (argc < 2) return CMDLINE_TOO_FEW_ARGS;
+//	if (argc > 2) return CMDLINE_TOO_MANY_ARGS;
+
+	int64_t vol = atoi(argv[1]);
+	UART_Printf(&CONSOLE_UART, "Tec set: %d mV \n", vol);
+	vol *= 1000000;
+	lt8722_set_output_voltage(vol);
 	return (CMDLINE_OK);
 }
 
@@ -360,9 +375,28 @@ int Cmd_get_status(int argc, char *argv[])
 	return (CMDLINE_OK);
 }
 
+int Cmd_set_ov_clamp(int argc, char *argv[])
+{
+	uint8_t over_vol = atoi(argv[1]);
+	UART_Printf(&CONSOLE_UART, "OV_CLAMP: %X \n", over_vol);
+	lt8722_set_spis_ov_clamp(over_vol);
+	return CMDLINE_OK;
+}
+int Cmd_set_uv_clamp(int argc, char *argv[])
+{
+	uint8_t uper_vol = atoi(argv[1]);
+	UART_Printf(&CONSOLE_UART, "UV_CLAMP: %X \n", uper_vol);
+	lt8722_set_spis_uv_clamp(uper_vol);
+	return CMDLINE_OK;
+}
+
+#include "i2c.h"
+
 int Cmd_get_all(int argc, char *argv[])
 {
-	UART_Send_String(&CONSOLE_UART, "hehe \r\n");
+	uint8_t data = 0x32;
+	UART_Send_String(&CONSOLE_UART, "get all \n");
+//	I2C_SendData(I2C2, 0x68, 0x01, &data, 1, 50000);
 	return (CMDLINE_OK);
 }
 

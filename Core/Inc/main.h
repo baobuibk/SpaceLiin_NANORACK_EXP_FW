@@ -27,6 +27,7 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f4xx_ll_i2c.h"
 #include "stm32f4xx_ll_rcc.h"
 #include "stm32f4xx_ll_bus.h"
 #include "stm32f4xx_ll_system.h"
@@ -81,6 +82,10 @@ void Error_Handler(void);
 #define EF_TEC_EN_GPIO_Port GPIOC
 #define WD_DONE_Pin LL_GPIO_PIN_1
 #define WD_DONE_GPIO_Port GPIOA
+#define EXP_SCL_Pin LL_GPIO_PIN_10
+#define EXP_SCL_GPIO_Port GPIOB
+#define EXP_SDA_Pin LL_GPIO_PIN_11
+#define EXP_SDA_GPIO_Port GPIOB
 #define EXP_URRT_TX_Pin LL_GPIO_PIN_8
 #define EXP_URRT_TX_GPIO_Port GPIOD
 #define EXP_UART_RX_Pin LL_GPIO_PIN_9
