@@ -27,6 +27,8 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f4xx_ll_adc.h"
+#include "stm32f4xx_ll_dma.h"
 #include "stm32f4xx_ll_i2c.h"
 #include "stm32f4xx_ll_rcc.h"
 #include "stm32f4xx_ll_bus.h"
@@ -35,7 +37,6 @@ extern "C" {
 #include "stm32f4xx_ll_cortex.h"
 #include "stm32f4xx_ll_utils.h"
 #include "stm32f4xx_ll_pwr.h"
-#include "stm32f4xx_ll_dma.h"
 #include "stm32f4xx_ll_spi.h"
 #include "stm32f4xx_ll_usart.h"
 #include "stm32f4xx_ll_gpio.h"
@@ -82,6 +83,14 @@ void Error_Handler(void);
 #define EF_TEC_EN_GPIO_Port GPIOC
 #define WD_DONE_Pin LL_GPIO_PIN_1
 #define WD_DONE_GPIO_Port GPIOA
+#define ADC_TEMP1_Pin LL_GPIO_PIN_4
+#define ADC_TEMP1_GPIO_Port GPIOC
+#define ADC_TEMP2_Pin LL_GPIO_PIN_5
+#define ADC_TEMP2_GPIO_Port GPIOC
+#define ADC_TEMP3_Pin LL_GPIO_PIN_0
+#define ADC_TEMP3_GPIO_Port GPIOB
+#define ADC_TEMP4_Pin LL_GPIO_PIN_1
+#define ADC_TEMP4_GPIO_Port GPIOB
 #define EXP_SCL_Pin LL_GPIO_PIN_10
 #define EXP_SCL_GPIO_Port GPIOB
 #define EXP_SDA_Pin LL_GPIO_PIN_11

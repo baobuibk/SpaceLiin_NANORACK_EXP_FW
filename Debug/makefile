@@ -15,6 +15,7 @@ RM := rm -rf
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include Core/LED/subdir.mk
+-include Core/Devices/NTC/subdir.mk
 -include Core/Devices/LT8722/subdir.mk
 -include Core/CMDLine/subdir.mk
 -include BSP/UART/subdir.mk
@@ -61,6 +62,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 exp_test.list \
 
+OBJCOPY_HEX += \
+exp_test.hex \
+
 
 # All Target
 all: main-build
@@ -84,12 +88,17 @@ exp_test.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+exp_test.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "exp_test.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) default.size.stdout exp_test.elf exp_test.list exp_test.map
+	-$(RM) default.size.stdout exp_test.elf exp_test.hex exp_test.list exp_test.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

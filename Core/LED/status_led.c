@@ -54,9 +54,9 @@ static Led_TaskContextTypedef           s_task_context =
 	{
 		SCH_TASK_SYNC,                      // taskType;
 		SCH_TASK_PRIO_0,                    // taskPriority;
-		50,                                // taskPeriodInMS;
+		500,                                // taskPeriodInMS;
 		status_led_update,                	// taskFunction;
-		48									// taskTick
+		480									// taskTick
 	},
 };
 
@@ -69,8 +69,16 @@ void status_led_init(void)
 	status_led_led_blue_off();
 }
 
+#include "command.h"
+#include "uart.h"
+#include "ntc.h"
+
+
 void	status_led_update(void)
 {
+	NTC_get_temperature_using_table(NTC_Temperature);
+	UART_Printf(&EXP_UART, "%d %d %d %d ", NTC_ADC_value[0], NTC_ADC_value[1], NTC_ADC_value[2], NTC_ADC_value[3]);
+	UART_Printf(&EXP_UART, "%d %d %d %d \n", NTC_Temperature[0], NTC_Temperature[1], NTC_Temperature[2], NTC_Temperature[3]);
 	switch (s_led_display_status.state) {
 	case EXP_POWERUP:
 		status_led_powerup();

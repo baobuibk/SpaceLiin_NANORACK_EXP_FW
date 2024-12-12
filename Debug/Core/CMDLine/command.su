@@ -17,7 +17,7 @@
 ../Core/CMDLine/command.c:370:5:Cmd_get_status	24	static
 ../Core/CMDLine/command.c:378:5:Cmd_set_ov_clamp	24	static
 ../Core/CMDLine/command.c:385:5:Cmd_set_uv_clamp	24	static
-../Core/CMDLine/command.c:395:5:Cmd_get_all	32	static
+../Core/CMDLine/command.c:395:5:Cmd_get_all	24	static
 ../Core/CMDLine/command.c:403:6:command_create_task	8	static
 ../Core/CMDLine/command.c:408:6:command_send_splash	8	static
 ../Core/CMDLine/command.c:420:6:CONSOLE_UART_IRQHandler	8	static

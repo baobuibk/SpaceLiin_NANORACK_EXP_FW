@@ -10,6 +10,7 @@ C_SRCS :=
 S_UPPER_SRCS := 
 O_SRCS := 
 CYCLO_FILES := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 OBJDUMP_LIST := 
 SU_FILES := 
@@ -28,6 +29,7 @@ BSP/SysTick \
 BSP/UART \
 Core/CMDLine \
 Core/Devices/LT8722 \
+Core/Devices/NTC \
 Core/LED \
 Core/Src \
 Core/Startup \

@@ -157,7 +157,7 @@ uint8_t I2C_Read(I2C_TypeDef *I2Cx, uint8_t addr, uint8_t reg, uint8_t *pData, u
 //			return -1;
 		}
 		// 12.3. Read data from DR
-		*pData[i] = LL_I2C_ReceiveData8(I2Cx);
+		pData[i] = LL_I2C_ReceiveData8(I2Cx);
 	}
 
 	// 13. Send STOP condition
