@@ -76,9 +76,9 @@ void status_led_init(void)
 
 void	status_led_update(void)
 {
-	NTC_get_temperature_using_table(NTC_Temperature);
-	UART_Printf(&EXP_UART, "%d %d %d %d ", NTC_ADC_value[0], NTC_ADC_value[1], NTC_ADC_value[2], NTC_ADC_value[3]);
-	UART_Printf(&EXP_UART, "%d %d %d %d \n", NTC_Temperature[0], NTC_Temperature[1], NTC_Temperature[2], NTC_Temperature[3]);
+//	NTC_get_temperature(NTC_Temperature);
+//	UART_Printf(&EXP_UART, "%d %d %d %d ", NTC_ADC_value[0], NTC_ADC_value[1], NTC_ADC_value[2], NTC_ADC_value[3]);
+//	UART_Printf(&EXP_UART, "%d %d %d %d \n", NTC_Temperature[0], NTC_Temperature[1], NTC_Temperature[2], NTC_Temperature[3]);
 	switch (s_led_display_status.state) {
 	case EXP_POWERUP:
 		status_led_powerup();

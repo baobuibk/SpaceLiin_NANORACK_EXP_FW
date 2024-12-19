@@ -28,12 +28,17 @@ BSP/I2C \
 BSP/SysTick \
 BSP/UART \
 Core/CMDLine \
+Core/COPC \
+Core/Devices/BMP390 \
+Core/Devices/Heater \
 Core/Devices/LT8722 \
 Core/Devices/NTC \
 Core/LED \
 Core/Src \
 Core/Startup \
+Core/Temperature \
 Core/WDog \
 Drivers/STM32F4xx_HAL_Driver/Src \
 Scheduler \
+ThirdParty/libfsp \
 

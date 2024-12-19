@@ -9,14 +9,19 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include ThirdParty/libfsp/subdir.mk
 -include Scheduler/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/WDog/subdir.mk
+-include Core/Temperature/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include Core/LED/subdir.mk
 -include Core/Devices/NTC/subdir.mk
 -include Core/Devices/LT8722/subdir.mk
+-include Core/Devices/Heater/subdir.mk
+-include Core/Devices/BMP390/subdir.mk
+-include Core/COPC/subdir.mk
 -include Core/CMDLine/subdir.mk
 -include BSP/UART/subdir.mk
 -include BSP/SysTick/subdir.mk

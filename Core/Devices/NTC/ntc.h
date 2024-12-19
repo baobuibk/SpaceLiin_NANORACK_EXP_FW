@@ -56,6 +56,6 @@ extern uint16_t NTC_ADC_value[4];
 extern int16_t NTC_Temperature[4];
 
 void NTC_DMA_ADC_init(void);
-void NTC_get_temperature_using_table(int16_t* temp);
+void NTC_get_temperature(int16_t* temp);
 
 #endif /* DEVICES_NTC_NTC_H_ */

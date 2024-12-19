@@ -1,0 +1,14 @@
+../Core/Temperature/temperature.c:82:13:temperature_update	9
+../Core/Temperature/temperature.c:126:6:temperature_auto_ctrl	3
+../Core/Temperature/temperature.c:168:6:temperature_manual_ctrl	3
+../Core/Temperature/temperature.c:189:6:temperature_init	1
+../Core/Temperature/temperature.c:195:6:temperature_create_task	1
+../Core/Temperature/temperature.c:201:6:temperature_set_setpoint	1
+../Core/Temperature/temperature.c:207:9:temperature_get_setpoint	1
+../Core/Temperature/temperature.c:212:9:temperature_get_temp_NTC	1
+../Core/Temperature/temperature.c:217:6:temperature_set_tec_vol	1
+../Core/Temperature/temperature.c:222:10:temperature_get_tec_vol	1
+../Core/Temperature/temperature.c:227:6:temperature_set_heater_duty	1
+../Core/Temperature/temperature.c:231:9:temperature_get_heater_duty	1
+../Core/Temperature/temperature.c:236:6:temperature_set_auto_ctrl	1
+../Core/Temperature/temperature.c:242:6:temperature_set_ctrl	9

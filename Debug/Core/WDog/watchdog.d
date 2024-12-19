@@ -22,6 +22,7 @@ Core/WDog/watchdog.o: ../Core/WDog/watchdog.c ../Core/WDog/watchdog.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h
 ../Core/WDog/watchdog.h:
 D:/STworkspace/exp_test/Scheduler/scheduler.h:
@@ -47,4 +48,5 @@ D:/STworkspace/exp_test/Core/Common/basetypedef.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h:

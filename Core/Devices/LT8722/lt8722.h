@@ -349,5 +349,6 @@ int8_t lt8722_get_spis_uv_clamp(uint8_t *value);
 
 int8_t lt8722_init(void);
 int8_t lt8722_set_output_voltage(int64_t value);
+int8_t lt8722_set_output_voltage_channel(uint8_t channel, int64_t value);
 
 #endif /* DEVICES_LT8722_LT8722_H_ */

@@ -428,8 +428,20 @@ int8_t lt8722_set_output_voltage(int64_t value)
 	return ret;
 }
 
+/**
+ * @brief Set output volatge of LT8722 device.
+ * @param channel - Channel of lt8722.
+ * @param value - Output voltage value in nanovolts.
+ * @return 0 in case of succes, negative error code otherwise
+ */
+int8_t lt8722_set_output_voltage_channel(uint8_t channel, int64_t value)
+{
+
+}
+
 /* Private support function definition ------------------------------------*/
-uint8_t Calculate_CRC8(uint8_t *data, uint8_t length) {
+uint8_t Calculate_CRC8(uint8_t *data, uint8_t length)
+{
     uint8_t crc = 0x00;
     uint8_t poly = 0x07;
     for (uint8_t i = 0; i < length; i++)

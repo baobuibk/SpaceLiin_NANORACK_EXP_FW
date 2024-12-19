@@ -16,5 +16,13 @@
 #define EXP_UART_IRQ          USART3_IRQn
 
 
+//*****************************************************************************
+// UART_COPC
+//*****************************************************************************
+#define EXP_RS485_HANDLE       USART2
+#define EXP_RS485_IRQ          USART2_IRQn
+
+
+
 
 #endif /* BOARD_BOARD_H_ */

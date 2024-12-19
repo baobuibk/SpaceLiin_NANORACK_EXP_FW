@@ -36,7 +36,7 @@ static const char * const HEX_reference = "0123456789abcdef";
  * QUEUE_Init function to manage incoming data efficiently.
  */
 
-void UART_Init( uart_stdio_typedef* p_uart, USART_TypeDef* _handle,
+void UART_Init(uart_stdio_typedef* p_uart, USART_TypeDef* _handle,
                 IRQn_Type _irqn, char* _p_TX_buffer, char* _p_RX_buffer,
                 uint16_t _TX_size, uint16_t _RX_size)
 {

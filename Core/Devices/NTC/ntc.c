@@ -505,43 +505,43 @@ int16_t NTC_table[4096] = {
 
 void NTC_DMA_ADC_init(void)
 {
-    // Cấu hình DMA
-    LL_DMA_SetChannelSelection(DMA2, LL_DMA_STREAM_0, LL_DMA_CHANNEL_0);
-    LL_DMA_SetDataTransferDirection(DMA2, LL_DMA_STREAM_0, LL_DMA_DIRECTION_PERIPH_TO_MEMORY);
-    LL_DMA_SetPeriphIncMode(DMA2, LL_DMA_STREAM_0, LL_DMA_PERIPH_NOINCREMENT);
-    LL_DMA_SetMemoryIncMode(DMA2, LL_DMA_STREAM_0, LL_DMA_MEMORY_INCREMENT);
-    LL_DMA_SetPeriphSize(DMA2, LL_DMA_STREAM_0, LL_DMA_PDATAALIGN_HALFWORD);
-    LL_DMA_SetMemorySize(DMA2, LL_DMA_STREAM_0, LL_DMA_MDATAALIGN_HALFWORD);
-    LL_DMA_SetDataLength(DMA2, LL_DMA_STREAM_0, 4); // 4 kênh
-
-    // Địa chỉ của ADC data register
-    LL_DMA_SetPeriphAddress(DMA2, LL_DMA_STREAM_0, (uint32_t)&ADC1->DR);
-
-    // Địa chỉ bộ nhớ DMA
-    LL_DMA_SetMemoryAddress(DMA2, LL_DMA_STREAM_0, (uint32_t)NTC_ADC_value);
-
-    // Cấu hình DMA ở chế độ vòng lặp (Circular Mode)
-    LL_DMA_SetMode(DMA2, LL_DMA_STREAM_0, LL_DMA_MODE_CIRCULAR);
-
-    // Bật DMA stream
+//    // Cấu hình DMA
+//    LL_DMA_SetChannelSelection(DMA2, LL_DMA_STREAM_0, LL_DMA_CHANNEL_0);
+//    LL_DMA_SetDataTransferDirection(DMA2, LL_DMA_STREAM_0, LL_DMA_DIRECTION_PERIPH_TO_MEMORY);
+//    LL_DMA_SetPeriphIncMode(DMA2, LL_DMA_STREAM_0, LL_DMA_PERIPH_NOINCREMENT);
+//    LL_DMA_SetMemoryIncMode(DMA2, LL_DMA_STREAM_0, LL_DMA_MEMORY_INCREMENT);
+//    LL_DMA_SetPeriphSize(DMA2, LL_DMA_STREAM_0, LL_DMA_PDATAALIGN_HALFWORD);
+//    LL_DMA_SetMemorySize(DMA2, LL_DMA_STREAM_0, LL_DMA_MDATAALIGN_HALFWORD);
+//    LL_DMA_SetDataLength(DMA2, LL_DMA_STREAM_0, 4); // 4 kênh
+//
+//    // Địa chỉ của ADC data register
+//    LL_DMA_SetPeriphAddress(DMA2, LL_DMA_STREAM_0, (uint32_t)&ADC1->DR);
+//
+//    // Địa chỉ bộ nhớ DMA
+//    LL_DMA_SetMemoryAddress(DMA2, LL_DMA_STREAM_0, (uint32_t)NTC_ADC_value);
+//
+//    // Cấu hình DMA ở chế độ vòng lặp (Circular Mode)
+//    LL_DMA_SetMode(DMA2, LL_DMA_STREAM_0, LL_DMA_MODE_CIRCULAR);
+//
+//    // Bật DMA stream
     LL_DMA_EnableStream(DMA2, LL_DMA_STREAM_0);
 
 
-    // Cấu hình ADC
-    LL_ADC_InitTypeDef ADC_InitStruct = {0};
-    ADC_InitStruct.Resolution = LL_ADC_RESOLUTION_12B;
-    ADC_InitStruct.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT;
-    ADC_InitStruct.SequencersScanMode = LL_ADC_SEQ_SCAN_ENABLE;
-    LL_ADC_Init(ADC1, &ADC_InitStruct);
-
-    // Cấu hình chế độ liên tục cho ADC
-    LL_ADC_REG_SetContinuousMode(ADC1, LL_ADC_REG_CONV_CONTINUOUS);
-
-    // Cấu hình các kênh ADC
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_14);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_15);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_8);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_9);
+//    // Cấu hình ADC
+//    LL_ADC_InitTypeDef ADC_InitStruct = {0};
+//    ADC_InitStruct.Resolution = LL_ADC_RESOLUTION_12B;
+//    ADC_InitStruct.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT;
+//    ADC_InitStruct.SequencersScanMode = LL_ADC_SEQ_SCAN_ENABLE;
+//    LL_ADC_Init(ADC1, &ADC_InitStruct);
+//
+//    // Cấu hình chế độ liên tục cho ADC
+//    LL_ADC_REG_SetContinuousMode(ADC1, LL_ADC_REG_CONV_CONTINUOUS);
+//
+//    // Cấu hình các kênh ADC
+//    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_14);
+//    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_15);
+//    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_8);
+//    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_9);
 
     // Bật ADC
     LL_ADC_Enable(ADC1);
@@ -572,7 +572,7 @@ void NTC_DMA_ADC_init(void)
 //	LL_ADC_REG_StartConversionSWStart(ADC1);
 //}
 
-void NTC_get_temperature_using_table(int16_t* temp)
+void NTC_get_temperature(int16_t* temp)
 {
 	for (uint8_t i = 0; i < 4; i++)
 	{

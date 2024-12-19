@@ -19,6 +19,7 @@ Core/CMDLine/command.o: ../Core/CMDLine/command.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
  D:/STworkspace/exp_test/BSP/UART/uart.h \
@@ -27,7 +28,9 @@ Core/CMDLine/command.o: ../Core/CMDLine/command.c \
  D:/STworkspace/exp_test/Core/Board/board.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
  D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h \
- D:/STworkspace/exp_test/BSP/I2C/i2c.h
+ D:/STworkspace/exp_test/Core/Temperature/temperature.h \
+ D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h \
+ D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h
 ../Core/CMDLine/command.h:
 ../Core/CMDLine/cmdline.h:
 ../Core/Inc/main.h:
@@ -50,6 +53,7 @@ Core/CMDLine/command.o: ../Core/CMDLine/command.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:
 D:/STworkspace/exp_test/BSP/UART/uart.h:
@@ -58,4 +62,6 @@ D:/STworkspace/exp_test/Core/Common/basetypedef.h:
 D:/STworkspace/exp_test/Core/Board/board.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
 D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h:
-D:/STworkspace/exp_test/BSP/I2C/i2c.h:
+D:/STworkspace/exp_test/Core/Temperature/temperature.h:
+D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h:
+D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h:
