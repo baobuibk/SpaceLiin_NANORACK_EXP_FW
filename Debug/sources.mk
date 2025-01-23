@@ -25,15 +25,18 @@ C_DEPS :=
 SUBDIRS := \
 BSP/Delay \
 BSP/I2C \
+BSP/I2C_Slave \
 BSP/SysTick \
 BSP/UART \
 Core/CMDLine \
 Core/COPC \
 Core/Devices/BMP390 \
 Core/Devices/Heater \
+Core/Devices/IR_LED \
 Core/Devices/LT8722 \
 Core/Devices/NTC \
 Core/LED \
+Core/Sensor_I2C \
 Core/Src \
 Core/Startup \
 Core/Temperature \

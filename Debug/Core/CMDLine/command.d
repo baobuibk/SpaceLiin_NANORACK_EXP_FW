@@ -30,7 +30,9 @@ Core/CMDLine/command.o: ../Core/CMDLine/command.c \
  D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h \
  D:/STworkspace/exp_test/Core/Temperature/temperature.h \
  D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h \
- D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h
+ D:/STworkspace/exp_test/BSP/I2C/i2c.h \
+ D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h \
+ D:/STworkspace/exp_test/Core/Devices/IR_LED/ir_led.h
 ../Core/CMDLine/command.h:
 ../Core/CMDLine/cmdline.h:
 ../Core/Inc/main.h:
@@ -64,4 +66,6 @@ D:/STworkspace/exp_test/Core/Board/board.h:
 D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h:
 D:/STworkspace/exp_test/Core/Temperature/temperature.h:
 D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h:
+D:/STworkspace/exp_test/BSP/I2C/i2c.h:
 D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h:
+D:/STworkspace/exp_test/Core/Devices/IR_LED/ir_led.h:

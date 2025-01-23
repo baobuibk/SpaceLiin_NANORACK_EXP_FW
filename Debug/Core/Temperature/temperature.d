@@ -32,6 +32,7 @@ Core/Temperature/temperature.o: ../Core/Temperature/temperature.c \
  D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h \
  D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h \
  D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h \
+ D:/STworkspace/exp_test/BSP/I2C/i2c.h \
  D:/STworkspace/exp_test/Core/Devices/Heater/heater.h
 ../Core/Temperature/temperature.h:
 ../Core/Inc/main.h:
@@ -67,4 +68,5 @@ D:/STworkspace/exp_test/Core/CMDLine/cmdline.h:
 D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h:
 D:/STworkspace/exp_test/Core/Devices/LT8722/lt8722.h:
 D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h:
+D:/STworkspace/exp_test/BSP/I2C/i2c.h:
 D:/STworkspace/exp_test/Core/Devices/Heater/heater.h:

@@ -19,6 +19,7 @@
 #include "temperature.h"
 #include "bmp390.h"
 #include "ntc.h"
+#include "ir_led.h"
 
 /* Private typedef -----------------------------------------------------------*/
 typedef struct _Command_TaskContextTypedef_
@@ -274,8 +275,8 @@ int Cmd_get_temp_setpoint(int argc, char *argv[])
 }
 int Cmd_set_tec_vol(int argc, char *argv[])
 {
-	if (argc < 5) return CMDLINE_TOO_FEW_ARGS;
-	if (argc > 5) return CMDLINE_TOO_MANY_ARGS;
+//	if (argc < 5) return CMDLINE_TOO_FEW_ARGS;
+//	if (argc > 5) return CMDLINE_TOO_MANY_ARGS;
 	uint16_t vol[4];
 	for (uint8_t i = 0; i < 4; i++)
 	{
@@ -328,10 +329,10 @@ int Cmd_set_heater_duty(int argc, char *argv[])
 int Cmd_get_heater_duty(int argc, char *argv[])
 {
 	if (argc > 1) return CMDLINE_TOO_MANY_ARGS;
-	int16_t duty_0 = temperature_get_heater_duty(0);
-	int16_t duty_1 = temperature_get_heater_duty(1);
-	int16_t duty_2 = temperature_get_heater_duty(2);
-	int16_t duty_3 = temperature_get_heater_duty(3);
+	uint16_t duty_0 = temperature_get_heater_duty(0);
+	uint16_t duty_1 = temperature_get_heater_duty(1);
+	uint16_t duty_2 = temperature_get_heater_duty(2);
+	uint16_t duty_3 = temperature_get_heater_duty(3);
 	UART_Printf(&CONSOLE_UART, "Heater duty[%d]:%i %\n", 0, duty_0);
 	UART_Printf(&CONSOLE_UART, "Heater duty[%d]:%i %\n", 1, duty_1);
 	UART_Printf(&CONSOLE_UART, "Heater duty[%d]:%i %\n", 2, duty_2);
@@ -340,8 +341,8 @@ int Cmd_get_heater_duty(int argc, char *argv[])
 }
 int Cmd_temp_ctrl(int argc, char *argv[])
 {
-	if (argc < 5) return CMDLINE_TOO_FEW_ARGS;
-	if (argc > 5) return CMDLINE_TOO_MANY_ARGS;
+//	if (argc < 5) return CMDLINE_TOO_FEW_ARGS;
+//	if (argc > 5) return CMDLINE_TOO_MANY_ARGS;
 	mode_ctrl_temp_t mode_0 = OFF;
 	mode_ctrl_temp_t mode_1 = OFF;
 	mode_ctrl_temp_t mode_2 = OFF;
@@ -377,10 +378,35 @@ int Cmd_temp_auto_ctrl(int argc, char *argv[])
 /* Command for ir led */
 int Cmd_set_ir_duty(int argc, char *argv[])
 {
+	if (argc < 5) return CMDLINE_TOO_FEW_ARGS;
+	if (argc > 5) return CMDLINE_TOO_MANY_ARGS;
+	uint8_t duty[4];
+	for (uint8_t i = 0; i < 4; i++)
+	{
+		duty[i] = atoi(argv[i+1]);
+		if (duty[i] > 100) duty[i] = 100;
+	}
+	ir_led_set_duty(0, duty[0] *9999/100);
+	ir_led_set_duty(1, duty[1] *9999/100);
+	ir_led_set_duty(2, duty[2] *9999/100);
+	ir_led_set_duty(3, duty[3] *9999/100);
+	UART_Printf(&CONSOLE_UART, "IR LED [%d] duty:%i %\n", 0, duty[0]);
+	UART_Printf(&CONSOLE_UART, "IR LED [%d] duty:%i %\n", 1, duty[1]);
+	UART_Printf(&CONSOLE_UART, "IR LED [%d] duty:%i %\n", 2, duty[2]);
+	UART_Printf(&CONSOLE_UART, "IR LED [%d] duty:%i %\n", 3, duty[3]);
 	return (CMDLINE_OK);
 }
 int Cmd_get_ir_duty(int argc, char *argv[])
 {
+	if (argc > 1) return CMDLINE_TOO_MANY_ARGS;
+	uint16_t duty_0 = ir_led_get_duty(0);
+	uint16_t duty_1 = ir_led_get_duty(1);
+	uint16_t duty_2 = ir_led_get_duty(2);
+	uint16_t duty_3 = ir_led_get_duty(3);
+	UART_Printf(&CONSOLE_UART, "Heater duty[%d]:%i %\n", 0, duty_0 *100/9999);
+	UART_Printf(&CONSOLE_UART, "Heater duty[%d]:%i %\n", 1, duty_1 *100/9999);
+	UART_Printf(&CONSOLE_UART, "Heater duty[%d]:%i %\n", 2, duty_2 *100/9999);
+	UART_Printf(&CONSOLE_UART, "Heater duty[%d]:%i %\n", 3, duty_3 *100/9999);
 	return (CMDLINE_OK);
 }
 /* Command for i2c sensor */
@@ -424,8 +450,8 @@ int Cmd_reset(int argc, char *argv[])
 int Cmd_set_en_req(int argc, char *argv[])
 {
 	LL_GPIO_SetOutputPin(TEC_1_EN_GPIO_Port, TEC_1_EN_Pin);
-	lt8722_reg_write(LT8722_SPIS_COMMAND, 0x00004000);
-//	lt8722_set_enable_req(LT8722_ENABLE_REQ_ENABLED);
+//	lt8722_reg_write(LT8722_SPIS_COMMAND, 0x00004000);
+	lt8722_set_enable_req(LT8722_ENABLE_REQ_ENABLED);
 	return (CMDLINE_OK);
 }
 

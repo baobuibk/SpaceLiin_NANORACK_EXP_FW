@@ -21,7 +21,10 @@ Core/Devices/BMP390/bmp390.o: ../Core/Devices/BMP390/bmp390.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
+ D:/STworkspace/exp_test/BSP/I2C/i2c.h \
+ D:/STworkspace/exp_test/Core/Board/board.h \
+ ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 ../Core/Devices/BMP390/bmp390.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h:
@@ -46,3 +49,6 @@ Core/Devices/BMP390/bmp390.o: ../Core/Devices/BMP390/bmp390.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:
+D:/STworkspace/exp_test/BSP/I2C/i2c.h:
+D:/STworkspace/exp_test/Core/Board/board.h:
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:

@@ -48,11 +48,11 @@ struct lt8722_reg lt8722_regs[LT8722_NUM_REGISTERS] = {
 
 /* SPI support function --------------------------------------------------*/
 static inline void csLOW(void) {
-	LL_GPIO_ResetOutputPin(TEC_1_CS_GPIO_Port, TEC_1_CS_Pin);
+	LL_GPIO_ResetOutputPin(TEC_4_CS_GPIO_Port, TEC_4_CS_Pin);
 }
 
 static inline void csHIGH(void) {
-	LL_GPIO_SetOutputPin(TEC_1_CS_GPIO_Port, TEC_1_CS_Pin);
+	LL_GPIO_SetOutputPin(TEC_4_CS_GPIO_Port, TEC_4_CS_Pin);
 }
 
 static uint8_t SPI_LL_Transmit(uint8_t data)
@@ -361,8 +361,8 @@ int8_t lt8722_init(void)
 	int64_t start_voltage;
 	int64_t end_voltage;
 
-	LL_GPIO_ResetOutputPin(TEC_1_EN_GPIO_Port, TEC_1_EN_Pin);
-	LL_GPIO_ResetOutputPin(TEC_1_SWEN_GPIO_Port, TEC_1_SWEN_Pin);
+	LL_GPIO_ResetOutputPin(TEC_4_EN_GPIO_Port, TEC_4_EN_Pin);
+	LL_GPIO_ResetOutputPin(TEC_4_SWEN_GPIO_Port, TEC_4_SWEN_Pin);
 	/*
 	 * Reset LT8722
 	 */
@@ -374,9 +374,10 @@ int8_t lt8722_init(void)
 	 * 2. Enable VCC LDO and other LT8722 circuitry
 	 */
 	ret = lt8722_clear_faults();
-	LL_GPIO_SetOutputPin(TEC_1_EN_GPIO_Port, TEC_1_EN_Pin);
+	LL_GPIO_SetOutputPin(TEC_4_EN_GPIO_Port, TEC_4_EN_Pin);
 	ret = lt8722_set_enable_req(LT8722_ENABLE_REQ_ENABLED);
 	ret = lt8722_reg_write(LT8722_SPIS_COMMAND, 0x00003A01);
+//	ret = lt8722_reg_write(LT8722_SPIS_COMMAND, 0x0002BA01);
 	/*
 	 * 3. Configure output voltage control DAC to 0xFF000000
 	 */
@@ -387,6 +388,7 @@ int8_t lt8722_init(void)
 	ret = lt8722_reg_write(LT8722_SPIS_STATUS, 0);
 	LL_mDelay(1);
 	ret = lt8722_reg_write(LT8722_SPIS_COMMAND, 0x00003A01);
+//	ret = lt8722_reg_write(LT8722_SPIS_COMMAND, 0x0002BA01);
 	/*
 	 * 5. Ramp the output voltage control DAC from 0xFF000000 to 0x00000000
 	 */
@@ -402,7 +404,7 @@ int8_t lt8722_init(void)
 	/*
 	 * 6. Enable the PWM switching behavior
 	 */
-	LL_GPIO_SetOutputPin(TEC_1_SWEN_GPIO_Port, TEC_1_SWEN_Pin);
+	LL_GPIO_SetOutputPin(TEC_4_SWEN_GPIO_Port, TEC_4_SWEN_Pin);
 	ret = lt8722_set_swen_req(LT8722_SWEN_REQ_ENABLED);
 	delay_us(180);
 	/*
@@ -436,7 +438,8 @@ int8_t lt8722_set_output_voltage(int64_t value)
  */
 int8_t lt8722_set_output_voltage_channel(uint8_t channel, int64_t value)
 {
-
+	uint8_t ret = 0;
+	return ret;
 }
 
 /* Private support function definition ------------------------------------*/

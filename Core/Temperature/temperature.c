@@ -84,6 +84,7 @@ static void temperature_update(void)
 // update temperature from BMP390
  	s_Temperature_CurrentState.BMP390_temperature = bmp390_get_temperature();
 // update temperature from NTC
+ 	NTC_get_temperature(NTC_Temperature);
 	s_Temperature_CurrentState.NTC_temperature[0] = NTC_Temperature[0];
 	s_Temperature_CurrentState.NTC_temperature[1] = NTC_Temperature[1];
 	s_Temperature_CurrentState.NTC_temperature[2] = NTC_Temperature[2];

@@ -1,1 +1,11 @@
-../Core/Devices/BMP390/bmp390.c:11:9:bmp390_get_temperature	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:881:22:LL_GPIO_SetOutputPin	1
+../Core/Devices/BMP390/bmp390.c:20:6:BMP390_read_raw_calibration	3
+../Core/Devices/BMP390/bmp390.c:52:6:BMP390_convert_calibration	1
+../Core/Devices/BMP390/bmp390.c:72:6:BMP390_set_mode	3
+../Core/Devices/BMP390/bmp390.c:92:6:BMP390_init	1
+../Core/Devices/BMP390/bmp390.c:102:6:BMP390_read_raw_temp_press	3
+../Core/Devices/BMP390/bmp390.c:125:6:BMP390_compensate_temperature	1
+../Core/Devices/BMP390/bmp390.c:131:6:BMP390_compensate_pressure	1
+../Core/Devices/BMP390/bmp390.c:156:6:bmp390_temp_press_update	1
+../Core/Devices/BMP390/bmp390.c:163:9:bmp390_get_temperature	2
+../Core/Devices/BMP390/bmp390.c:168:9:bmp390_get_press	2

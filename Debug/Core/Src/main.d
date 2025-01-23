@@ -33,7 +33,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  D:/STworkspace/exp_test/Core/CMDLine/cmdline.h \
  D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h \
  D:/STworkspace/exp_test/Core/Temperature/temperature.h \
- D:/STworkspace/exp_test/Core/COPC/copc.h
+ D:/STworkspace/exp_test/Core/COPC/copc.h \
+ D:/STworkspace/exp_test/Core/Sensor_I2C/sensor_i2c.h \
+ D:/STworkspace/exp_test/BSP/I2C_Slave/register.h \
+ D:/STworkspace/exp_test/BSP/I2C_Slave/i2c_slave.h \
+ D:/STworkspace/exp_test/BSP/I2C_Slave/register.h \
+ D:/STworkspace/exp_test/BSP/I2C/i2c.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
@@ -70,3 +75,8 @@ D:/STworkspace/exp_test/Core/CMDLine/cmdline.h:
 D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h:
 D:/STworkspace/exp_test/Core/Temperature/temperature.h:
 D:/STworkspace/exp_test/Core/COPC/copc.h:
+D:/STworkspace/exp_test/Core/Sensor_I2C/sensor_i2c.h:
+D:/STworkspace/exp_test/BSP/I2C_Slave/register.h:
+D:/STworkspace/exp_test/BSP/I2C_Slave/i2c_slave.h:
+D:/STworkspace/exp_test/BSP/I2C_Slave/register.h:
+D:/STworkspace/exp_test/BSP/I2C/i2c.h:

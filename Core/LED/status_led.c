@@ -67,18 +67,34 @@ void status_led_init(void)
     s_led_display_status.state = EXP_POWERUP;
 	status_led_led_green_off();
 	status_led_led_blue_off();
+
+
+
 }
 
 #include "command.h"
 #include "uart.h"
 #include "ntc.h"
-
+#include "i2c.h"
+#include "board.h"
+#include "main.h"
+#include "bmp390.h"
 
 void	status_led_update(void)
 {
 //	NTC_get_temperature(NTC_Temperature);
 //	UART_Printf(&EXP_UART, "%d %d %d %d ", NTC_ADC_value[0], NTC_ADC_value[1], NTC_ADC_value[2], NTC_ADC_value[3]);
 //	UART_Printf(&EXP_UART, "%d %d %d %d \n", NTC_Temperature[0], NTC_Temperature[1], NTC_Temperature[2], NTC_Temperature[3]);
+
+//	LL_GPIO_SetOutputPin(SENSOR1_EN_GPIO_Port, SENSOR1_EN_Pin);
+//	LL_GPIO_SetOutputPin(SENSOR2_EN_GPIO_Port, SENSOR2_EN_Pin);
+//	I2C_Write(SENSOR_I2C_HANDLE, 0x77, 0x1B, (uint8_t)0x62, 1, 5000);
+
+//	bmp390_temp_press_update();
+//	UART_Printf(&EXP_UART, "%d %d \n", bmp390_get_press(), bmp390_get_temperature());
+
+
+
 	switch (s_led_display_status.state) {
 	case EXP_POWERUP:
 		status_led_powerup();

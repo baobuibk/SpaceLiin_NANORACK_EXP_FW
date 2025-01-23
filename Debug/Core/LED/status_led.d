@@ -26,7 +26,11 @@ Core/LED/status_led.o: ../Core/LED/status_led.c ../Core/LED/status_led.h \
  D:/STworkspace/exp_test/Core/CMDLine/command.h \
  D:/STworkspace/exp_test/Core/CMDLine/cmdline.h \
  D:/STworkspace/exp_test/BSP/UART/uart.h \
- D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h
+ D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h \
+ D:/STworkspace/exp_test/BSP/I2C/i2c.h \
+ D:/STworkspace/exp_test/Core/Board/board.h \
+ ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
+ D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h
 ../Core/LED/status_led.h:
 D:/STworkspace/exp_test/Scheduler/scheduler.h:
 D:/STworkspace/exp_test/Core/Common/basetypedef.h:
@@ -57,3 +61,7 @@ D:/STworkspace/exp_test/Core/CMDLine/command.h:
 D:/STworkspace/exp_test/Core/CMDLine/cmdline.h:
 D:/STworkspace/exp_test/BSP/UART/uart.h:
 D:/STworkspace/exp_test/Core/Devices/NTC/ntc.h:
+D:/STworkspace/exp_test/BSP/I2C/i2c.h:
+D:/STworkspace/exp_test/Core/Board/board.h:
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
+D:/STworkspace/exp_test/Core/Devices/BMP390/bmp390.h:
